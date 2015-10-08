@@ -102,6 +102,11 @@ da:
       no_description: 'Ingen beskrivelse'
       dont_expire: Aldrig
 
+    blank_slate:
+      index:
+        no_coupons: 'Ingen rabatkoder fundet'
+        info: "Du har ikke oprettet nogen rabatkoder endnu. De bliver vist her når du har oprettet nogen."
+
   activerecord:
     errors:
       messages:
