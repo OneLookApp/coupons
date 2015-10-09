@@ -1,4 +1,4 @@
-class Coupons::ApplicationController < ActionController::Base
+class Coupons::ApplicationController < ::ApplicationController
   protect_from_forgery with: :exception
 
   include Coupons::Models
