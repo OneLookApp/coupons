@@ -1,4 +1,8 @@
 module Coupons::ApplicationHelper
+  def coupon_code(coupon)
+    coupon.code
+  end
+
   def coupon_discount(coupon)
     t("#{coupon.type}_html", scope: 'coupons.off', amount: coupon.amount)
   end

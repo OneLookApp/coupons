@@ -36,6 +36,7 @@ da:
       other: '%{count}'
 
     columns:
+      code: 'Rabatkode'
       description: 'Beskrivelse'
       discount: 'Rabat'
       redeemed: 'Indløst'
