@@ -4,18 +4,41 @@ da:
     formats:
       coupon: '%b %d, %Y'
 
-  coupons:
-    paginate:
-      previous: 'Forrige side'
-      next: 'Næste side'
-      page: 'Side %{page}'
+  page_meta:
+    titles:
+      base: "%{value}"
+      coupons:
+        coupons:
+          index: Rabatkoder
+          new: Ny rabatkode
+          edit: Redigér rabatkode
+          remove: Slet rabatkode
+          duplicate: Duplikér rabatkode
 
+  views:
+    pagination:
+      first: "&laquo; Første"
+      last: "Sidste &raquo;"
+      previous: "&lsaquo; Forrige"
+      next: "Næste &rsaquo;"
+      truncate: "&hellip;"
+
+  paginate:
+    previous: 'Forrige side'
+    next: 'Næste side'
+    page: 'Side %{page}'
+
+  coupons:
     new_coupon_button: 'Opret rabatkode'
     are_you_sure_you_want_to_remove_html: >
       Er du sikker på at du vil slette denne rabatkode?
     you_cant_undo_removal_html: >
       Alle gemte indløsninger vil også blive slettet.
       <strong>Du kan ikke fortryde dette.</strong>
+
+    blank_slate:
+      no_coupons: 'Ingen rabatkoder fundet'
+      no_coupons_description: "Du har ikke oprettet nogen rabatkoder endnu. De bliver vist her når du har oprettet nogen."
 
     selected_rules:
       one: '${count} rabatkode valgt'
@@ -48,6 +71,7 @@ da:
       confirm: "Ja, jeg er sikker!"
       cancel: "Annullér"
       go_back: 'Gå tilbage'
+      duplicate: 'Kopiér'
 
     flash:
       coupons:
@@ -61,12 +85,6 @@ da:
           invalid_action: 'Denne handling er ikke gyldig.'
           removal:
             notice: 'Rabatkoderne er slettet'
-
-    titles:
-      coupons: Rabatkoder
-      coupons_new: Ny rabatkode
-      coupons_edit: Redigér rabatkode
-      coupons_remove: Slet rabatkode
 
     labels:
       coupon:
