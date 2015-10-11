@@ -209,3 +209,10 @@ Coupons uses [I18n](http://guides.rubyonrails.org/i18n.html). It has support for
 4. Commit your changes (`git commit -am 'Add some feature'`)
 5. Push to the branch (`git push origin my-new-feature`)
 6. Create a new Pull Request
+
+## Deviations from original repo (fnando/coupons)
+
+These changes have been made in the `wallo` branch (and only there), to support a specific project:
+
+- Engine `AppController` inherits from main app `::ApplicationController` to leverage the host apps‘ authentication strategy
+- Main index view has been updated to show a bit more detail (see 3843a886fb9aa2d8b6490ea785b78e5389092a05)
