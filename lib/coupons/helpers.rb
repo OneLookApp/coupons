@@ -61,7 +61,7 @@ module Coupons
 
     # Find a valid coupon by its code.
     # It takes starting/ending date, and redemption count in consideration.
-    def find(code, options)
+    def find(code, options={})
       Coupons.configuration.finder.call(code, options)
     end
   end
