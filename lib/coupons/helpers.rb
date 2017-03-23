@@ -30,6 +30,11 @@ module Coupons
       options[:total] = options[:amount]
 
       coupon = find(code, options)
+      if coupon.nil?
+        options[:is_valid] = false
+      else
+        options[:is_valid] = true
+      end
       return options unless coupon
 
       coupon.redemptions.create!(options.slice(:user_id, :order_id))
@@ -49,6 +54,11 @@ module Coupons
       options[:total] = options[:amount]
 
       coupon = find(code, options)
+      if coupon.nil?
+        options[:is_valid] = false
+      else
+        options[:is_valid] = true
+      end
       return options unless coupon
 
       coupon.apply(options)
