@@ -45,6 +45,7 @@ module Coupons
         options[:message] = 'Coupon applied successfully'
         if min_purchase_price.present? and options[:amount] < min_purchase_price
           discount = 0
+          options[:is_valid] = false
           options[:message] = "Minimum purchase amount to apply this coupon is #{min_purchase_price.to_s}"
         end
         if max_discount_price.present? and discount > max_discount_price
