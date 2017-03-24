@@ -37,7 +37,7 @@ module Coupons
       end
       return options unless coupon
 
-      coupon.redemptions.create!(options.slice(:user_id, :order_id))
+      coupon.redemptions.create!(options.slice(:user_id, :order_id, :discount))
       coupon.apply(options)
     end
 

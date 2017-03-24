@@ -92,8 +92,8 @@ en:
         type: 'Type'
         amount: 'Amount'
         code: 'Discount Code'
-        min_purchase_price: 'Min Purchase Price.'
-        max_discount_price: 'Max Discount Price.'
+        min_purchase_price: 'Min Purchase Price'
+        max_discount_price: 'Max Discount Price'
         valid_from: 'Valid From'
         valid_until: 'Valid Until'
 
