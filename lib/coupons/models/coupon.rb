@@ -42,7 +42,7 @@ module Coupons
       def apply(options)
         input_amount = BigDecimal("#{options[:amount]}")
         discount = BigDecimal(percentage_based? ? percentage_discount(options[:amount]) : amount)
-        if min_purchase_price.present? and min_purchase_price < options[:amount]
+        if min_purchase_price.present? and options[:amount] < min_purchase_price
           discount = 0
         end
         if discount > max_discount_price
