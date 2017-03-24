@@ -90,6 +90,8 @@ pt-BR:
         redemption_limit: 'Limite de Uso'
         type: 'Tipo'
         amount: 'Quantia'
+        min_purchase_price: 'Min Purchase Price.'
+        max_discount_price: 'Max Discount Price.'
         code: 'Código de Desconto'
         valid_from: 'Válido à partir de'
         valid_until: 'Válido Até'
@@ -101,6 +103,8 @@ pt-BR:
         description: 'Descreva este cupom, assim saberá por que ele existe.'
         redemption_limit: 'Defina quantas vezes o cupom pode ser usado. Zero significa sem limites.'
         amount: 'O desconto que será aplicado. De 0-100 para porcentagem, zero ou um número positivo para um valor.'
+        min_purchase_price: 'Set the minimum purchase price above which discount can be applied.'
+        max_discount_price: 'Set the maximum discount price.'
         valid_from: 'Data de início do cupom.'
         valid_until: 'Data de término do cupom. Por padrão, não expira nunca.'
 
