@@ -15,6 +15,10 @@ module Coupons::ApplicationHelper
     "$#{coupon.min_purchase_price}"
   end
 
+  def redemption_limit_per_user(coupon)
+    coupon.redemption_limit_per_user
+  end
+
   def coupon_description(coupon)
     classes = ['ellipsis']
 

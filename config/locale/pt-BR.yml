@@ -60,6 +60,9 @@ pt-BR:
     columns:
       description: 'Descrição'
       discount: 'Desconto'
+      min_purchase_price: 'Minimum Purchase Price'
+      max_discount_price: 'Maximum Discount Price'
+      redemption_limit_per_user: 'Redemption limit per user'
       redeemed: 'Utilizado'
       expiration: 'Término'
 
@@ -88,6 +91,7 @@ pt-BR:
       coupon:
         description: 'Descrição'
         redemption_limit: 'Limite de Uso'
+        redemption_limit_per_user: 'Redemption Limit Per User'
         type: 'Tipo'
         amount: 'Quantia'
         min_purchase_price: 'Min Purchase Price.'
@@ -102,6 +106,7 @@ pt-BR:
         code: 'Este é o código que deverá ser informado na página de checkout.'
         description: 'Descreva este cupom, assim saberá por que ele existe.'
         redemption_limit: 'Defina quantas vezes o cupom pode ser usado. Zero significa sem limites.'
+        redemption_limit_per_user: 'Set how many times a user can use this coupon. Zero means no limit.'
         amount: 'O desconto que será aplicado. De 0-100 para porcentagem, zero ou um número positivo para um valor.'
         min_purchase_price: 'Set the minimum purchase price above which discount can be applied.'
         max_discount_price: 'Set the maximum discount price.'

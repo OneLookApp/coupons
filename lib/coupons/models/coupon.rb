@@ -78,6 +78,15 @@ module Coupons
         valid_from <= Date.current
       end
 
+      def has_available_user_redemptions?(user_id)
+        if redemption_limit_per_user == 0
+          true
+        else
+          user_redemptions_count = redemptions.where(:user_id => user_id).count
+          user_redemptions_count < redemption_limit_per_user ? true : false
+        end
+      end
+
       def redeemable?
         !expired? && has_available_redemptions? && started?
       end
