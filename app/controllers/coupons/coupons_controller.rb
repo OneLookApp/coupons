@@ -36,7 +36,7 @@ class Coupons::CouponsController < Coupons::ApplicationController
 
   def duplicate
     existing_coupon = Coupon.find(params[:id])
-    attributes = existing_coupon.attributes.symbolize_keys.slice(:description, :valid_from, :valid_until, :redemption_limit, :amount, :type)
+    attributes = existing_coupon.attributes.symbolize_keys.slice(:description, :valid_from, :valid_until, :redemption_limit, :amount, :type, :min_purchase_price, :max_discount_price)
     @coupon = Coupon.new(attributes)
     render :new
   end
@@ -85,6 +85,6 @@ class Coupons::CouponsController < Coupons::ApplicationController
   def coupon_params
     params
       .require(:coupon)
-      .permit(:code, :redemption_limit, :description, :valid_from, :valid_until, :amount, :type)
+      .permit(:code, :redemption_limit, :description, :valid_from, :valid_until, :amount, :type, :min_purchase_price, :max_discount_price)
   end
 end

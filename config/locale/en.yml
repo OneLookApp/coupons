@@ -92,6 +92,8 @@ en:
         type: 'Type'
         amount: 'Amount'
         code: 'Discount Code'
+        min_purchase_price: 'Min Purchase Price.'
+        max_discount_price: 'Max Discount Price.'
         valid_from: 'Valid From'
         valid_until: 'Valid Until'
 
@@ -102,6 +104,8 @@ en:
         description: 'Describe this coupon, so you can remember why it exists.'
         redemption_limit: 'Set how many times this coupon can be used. Zero means no limit.'
         amount: 'This is the actual discount amount. 0-100 for percentage, zero or positive number for amount.'
+        min_purchase_price: 'Set the minimum purchase price above which discount can be applied.'
+        max_discount_price: 'Set the maximum discount price.'
         valid_from: 'When this coupon will be available.'
         valid_until: 'When will this coupon expire. By default, it does not expire.'
 

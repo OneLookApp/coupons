@@ -63,6 +63,30 @@
 
   <div class="form-group">
     <div class="form-label">
+      <%= form.label :min_purchase_price %>
+      <%= form.hint  :min_purchase_price %>
+    </div>
+
+    <div class="form-control">
+      <%= form.text_field :min_purchase_price %>
+      <%= form.error_for :min_purchase_price %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="form-label">
+      <%= form.label :max_discount_price %>
+      <%= form.hint  :max_discount_price %>
+    </div>
+
+    <div class="form-control">
+      <%= form.text_field :max_discount_price %>
+      <%= form.error_for :max_discount_price %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="form-label">
       <%= form.label :valid_from %>
       <%= form.hint  :valid_from %>
     </div>
