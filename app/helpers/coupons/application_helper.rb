@@ -7,6 +7,14 @@ module Coupons::ApplicationHelper
     t("#{coupon.type}_html", scope: 'coupons.off', amount: coupon.amount)
   end
 
+  def max_discount_price(coupon)
+    "$#{coupon.max_discount_price}"
+  end
+
+  def min_purchase_price(coupon)
+    "$#{coupon.min_purchase_price}"
+  end
+
   def coupon_description(coupon)
     classes = ['ellipsis']
 
