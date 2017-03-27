@@ -58,6 +58,7 @@ module Coupons
 
       coupon = find(code, options)
       if coupon.nil?
+        options[:message] = 'Invalid coupon code'
         options[:is_valid] = false
       else
         options[:is_valid] = true
