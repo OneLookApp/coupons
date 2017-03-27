@@ -83,7 +83,7 @@ module Coupons
           true
         else
           user_redemptions_count = redemptions.where(:user_id => user_id).count
-          user_redemptions_count < redemption_limit_per_user ? true : false
+          user_redemptions_count <= redemption_limit_per_user ? true : false
         end
       end
 
