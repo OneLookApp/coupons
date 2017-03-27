@@ -85,6 +85,6 @@ class Coupons::CouponsController < Coupons::ApplicationController
   def coupon_params
     params
       .require(:coupon)
-      .permit(:code, :redemption_limit, :description, :valid_from, :valid_until, :amount, :type, :min_purchase_price, :max_discount_price)
+      .permit(:code, :redemption_limit, :description, :valid_from, :valid_until, :amount, :type, :min_purchase_price, :max_discount_price, :redemption_limit_per_user)
   end
 end
