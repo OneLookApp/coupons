@@ -4,9 +4,9 @@ module Coupons
       coupons = Models::Coupon.where(code: code).all.select(&:redeemable?)
       coupon = nil
       if coupons.present?
-        coupons.each do |coupon|
-          if coupon.has_available_user_redemptions?(options[:user_id])
-            coupon = coupon
+        coupons.each do |selected_coupon|
+          if selected_coupon.has_available_user_redemptions?(options[:user_id])
+            coupon = selected_coupon
             break
           end
         end
