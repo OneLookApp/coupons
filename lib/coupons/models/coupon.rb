@@ -53,7 +53,8 @@ module Coupons
         end
         total = [0, input_amount - discount].max
 
-        options = options.merge(total: total, discount: discount)
+        discount_percent = BigDecimal((discount*100)/total)
+        options = options.merge(total: total, discount: discount, discount_percent: discount_percent)
 
         options = Coupons.configuration.resolvers.reduce(options) do |options, resolver|
           resolver.resolve(self, options)
