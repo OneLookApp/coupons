@@ -38,14 +38,14 @@ module Coupons
                       -> relation, page { relation.paginate(page: page, size: Coupons.configuration.per_page) }
                     end
 
-      @authorizer = proc do |controller|
-        if Rails.env.production?
-          controller.render(
-            text: 'Coupouns: not enabled in production environments',
-            status: 403
-          )
-        end
-      end
+      # @authorizer = proc do |controller|
+      #   if Rails.env.production?
+      #     controller.render(
+      #       text: 'Coupouns: not enabled in production environments',
+      #       status: 403
+      #     )
+      #   end
+      # end
     end
   end
 end
