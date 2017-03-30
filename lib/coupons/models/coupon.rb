@@ -31,7 +31,6 @@ module Coupons
 
       validates_numericality_of :amount,
         greater_than_or_equal_to: 0,
-        only_integer: true,
         if: :amount_based?
 
       validates_numericality_of :redemption_limit,
