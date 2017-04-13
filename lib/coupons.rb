@@ -14,6 +14,7 @@ module Coupons
   require 'coupons/finders/first_available'
   require 'coupons/finders/smaller_discount'
   require 'coupons/finders/larger_discount'
+  require 'coupons/finders/no_restriction'
 
   begin
     require 'paginate'
