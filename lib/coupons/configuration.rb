@@ -28,7 +28,7 @@ module Coupons
       @resolvers = [Resolver.new]
       @generator = Generator.new
       @finder = Finders::FirstAvailable
-      @no_restriction_finder = Finders::NoRestriction
+      @no_restriction_finder = Coupons::Finders::NoRestriction
       @per_page = 50
       @pagination_adapter = if defined?(Kaminari)
                               :kaminari
