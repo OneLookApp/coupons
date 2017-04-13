@@ -62,6 +62,30 @@ module Coupons
         options
       end
 
+      def no_restriction_apply(options)
+        input_amount = BigDecimal("#{options[:amount]}")
+        discount = BigDecimal(percentage_based? ? percentage_discount(options[:amount]) : amount)
+        options[:message] = 'Coupon applied successfully'
+        if min_purchase_price.present? and options[:amount] < min_purchase_price
+          discount = 0
+          options[:is_valid] = false
+          options[:message] = "Minimum purchase amount to apply this coupon is $#{min_purchase_price.to_s}"
+        end
+        if max_discount_price.present? and discount > max_discount_price
+          discount = max_discount_price
+        end
+        total = [0, input_amount - discount].max
+
+        discount_percent = BigDecimal(percentage_based? ? amount : 0)
+        options = options.merge(total: total, discount: discount, discount_percent: discount_percent)
+
+        options = Coupons.configuration.resolvers.reduce(options) do |options, resolver|
+          resolver.resolve(self, options)
+        end
+
+        options
+      end
+
       def redemptions_count
         coupon_redemptions_count
       end

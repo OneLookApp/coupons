@@ -69,6 +69,22 @@ module Coupons
       coupon.apply(options)
     end
 
+  def no_restriction_apply(code, options)
+    options[:discount] = 0
+    options[:total] = options[:amount]
+
+    coupon = no_restriction_find(code, options)
+    if coupon.nil?
+      options[:message] = 'Invalid coupon code' if options['message'].blank?
+      options[:is_valid] = false
+    else
+      options[:is_valid] = true
+    end
+    return options unless coupon
+
+    coupon.no_restriction_apply(options)
+  end
+
     # Create a new coupon code.
     def create(options)
       ::Coupons::Models::Coupon.create!(options)
@@ -78,6 +94,10 @@ module Coupons
     # It takes starting/ending date, and redemption count in consideration.
     def find(code, options={})
       Coupons.configuration.finder.call(code, options)
+    end
+
+    def no_restriction_find(code, options={})
+      Coupons.configuration.no_restriction_finder.call(code, options)
     end
   end
 end

@@ -12,6 +12,9 @@ module Coupons
     # Set the coupon finder strategy.
     attr_accessor :finder
 
+    # Set the No restrictions coupon finder strategy.
+    attr_accessor :no_restriction_finder
+
     # Set pagination lib.
     attr_accessor :pagination_adapter
 
@@ -25,6 +28,7 @@ module Coupons
       @resolvers = [Resolver.new]
       @generator = Generator.new
       @finder = Finders::FirstAvailable
+      @no_restriction_finder = Finders::NoRestriction
       @per_page = 50
       @pagination_adapter = if defined?(Kaminari)
                               :kaminari
